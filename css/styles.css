@@ -1,0 +1,9 @@
+ul.cities li{
+  list-style-type:none;
+  color:green;
+  border:1px solid black;
+  background-color:white;
+  padding:5px;
+  max-width:200px;
+  cursor:pointer;
+}
