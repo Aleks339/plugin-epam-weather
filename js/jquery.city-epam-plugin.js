@@ -18,6 +18,8 @@
                           var result = JSON.parse(xhr.responseText);
                           var temperature = parseInt(result.main.temp - 273.15) +  '&#176;C'; 
                           $li.append(' (' + temperature + ')');
+                      }else{
+                          alert('404');
                       }                      
                   }
                   xhr.send();
