@@ -1,5 +1,4 @@
 (function( $ ){
-      console.log(typeof method);
       $.fn.cityEpamPlugin = function( options ){
         var settings = ['Paris', 'London'];
         if(options){
