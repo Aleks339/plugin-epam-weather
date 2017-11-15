@@ -8,8 +8,6 @@
         return this.each(function(){
             var $this = $(this);
             var liCollection = $this.find('li');
-            var firstChild = $this.find('li:first-child');
-            var lastChild = $this.find('li:last-child');
           $.each(liCollection, function(){
             var $li = $(this);
             $.each(settings, function(){
@@ -30,26 +28,20 @@
                   return false;
                 }
             })
-            var methods = {
-                init: function(){
-                    liCollection.on('click', function(){
-                     $(this).hide('slow', function(){
-                         $(this).insertBefore(firstChild('li:first-child'));
-                             $(this).show('slow');
-                      });
-                    });
-                },
-                switch: function(){
-                    $('button').on('click', function(){
-                        liCollection.on('click', function(){
-                           $(this).hide('slow', function(){
-                              $(this).insertAfter(lastChild('li:last-child'));
-                                 $(this).show('slow');
-                            });
-                        });
-                    });
-                }
-            }
+            liCollection.on('click', function(){
+              $(this).hide('slow', function(){
+                  $(this).insertBefore($this.find('li:first-child'));
+                      $(this).show('slow');
+                  });
+             });
+             $('button').on('click', function(){
+                liCollection.on('click', function(){
+                   $(this).hide('slow', function(){
+                      $(this).insertAfter($this.find('li:last-child'));
+                       $(this).show('slow');
+                  });
+               });
+            });
           });
       });
     }
